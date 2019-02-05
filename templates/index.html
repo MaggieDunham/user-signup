@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Sign Up</h1>
-<form method= "POST">
+<form action= "/signup" method= "POST">
     <table>
         <tbody>
             <tr>
@@ -10,8 +9,8 @@
                  <label for="username">Username</label>
                 </td>
                 <td>
-                  <input name= "username" type= "text" value=""/>
-                  <span class="error"></span>
+                  <input name= "username" type= "text" value="{{username}}"/>
+                  <span class="error">{{username_error}}</span>
                 </td>
             </tr>
             <tr>
@@ -20,7 +19,7 @@
               </td>
               <td>
                 <input name="password" type="password"/>
-                <span class="error"></span>
+                <span class="error">{{password_error}}</span>
               </td>
             </tr>
             <tr>
@@ -29,7 +28,7 @@
               </td>
               <td>
                   <input name="verify" type="password"/>
-                  <span class="error"></span>
+                  <span class="error">{{verify_password_error}}</span>
               </td>
             </tr>
             <tr>
@@ -37,12 +36,12 @@
                     <label for="email">Email (optional)</label>
                 </td>
                 <td>
-                    <input name="email" value=""/>
-                    <span class="error"></span>
+                    <input name="email" value="{{email}}"/>
+                    <span class="error">{{email_error}}</span>
                 </td>
             </tr>
         </tbody>
     </table>
     <input type="submit" value="Submit Query"/>     
-    </form>
+</form>
     {% endblock %}
